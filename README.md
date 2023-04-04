@@ -1,1 +1,1 @@
-![alt text](<https://people.com/thmb/bHUHVDp056iy-uwjxIWVtQLH9f4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(779x560:781x562)/startled-cat-5-e1d007b13bf14746a4f4dfe369d6d6ce.jpg>)
+![alt text](<https://github.com/xmiface/init/blob/master/public/preview.png>)
