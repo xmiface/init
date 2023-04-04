@@ -1,0 +1,22 @@
+[
+  {
+    "href": "/coingecko",
+    "heading": "Coingecko",
+    "description": "Real-time cryptocurrency prices, charts, and market capitalizations aggregator."
+  },
+  {
+    "href": "/farm",
+    "heading": "Coding simulator",
+    "description": "Push buttons for get points"
+  },
+  {
+    "href": "/quiz",
+    "heading": "Developers quiz",
+    "description": "Interactive web page for testing knowledge and learning new information."
+  },
+  {
+    "href": "/themealdb",
+    "heading": "The Meal Db",
+    "description": "Online food delivery service for restaurants in Russia and Central Asia."
+  }
+]
