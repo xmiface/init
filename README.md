@@ -1,1 +1,1 @@
-![alt text](<https://github.com/xmiface/init/blob/master/public/preview.png?raw=true>)
+<img src="https://github.com/xmiface/init/blob/master/public/preview.png?raw=true" alt="Alt text" title="title">
