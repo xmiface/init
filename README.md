@@ -1,1 +1,1 @@
-![alt text](https://github.com/xmiface/init/blob/master/public/preview.png?raw=true)
+![alt text](<https://github.com/xmiface/init/blob/master/public/preview.png?raw=true>)
