@@ -5,7 +5,7 @@ import path from "path";
 const filePath = (filename: string) => path.resolve(filename);
 export const fileBuff = (filename: string) => fs.readFileSync(filePath(filename));
 export const parsedFile = (filename: string) => JSON.parse(fileBuff(filename).toString());
-export const saveFile = (filename: string, data: string) => fs.writeFileSync(filename, data);
+export const saveFile = (filename: string, data: any) => fs.writeFileSync(filename, JSON.stringify(data));
 
 const addRowTo = (filename: string, newField: any) => {
   const fileBefore = parsedFile(filename);

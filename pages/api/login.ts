@@ -21,9 +21,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const sessionToken = randomiseToken();
 
   const tokens = parsedFile("./db/tokens.json");
+  console.log('tokens')
   tokens.push({ id: userWithLogin.id, refreshToken: refreshToken, sessionToken: sessionToken });
-  const stringToSave = JSON.stringify(tokens);
-  saveFile("./db/tokens.json", stringToSave);
+  saveFile("./db/tokens.json", tokens);
 
   res.send({
     status: 200,

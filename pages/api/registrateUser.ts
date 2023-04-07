@@ -28,8 +28,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const safetyUser = { username: req.body.username, login: req.body.login, password: req.body.password };
   const newUser = { id: nanoid(), role: "user", ...safetyUser };
   users.push(newUser);
-  const stringToSave = JSON.stringify(users);
-  saveFile("./db/users.json", stringToSave);
+  saveFile("./db/users.json", users);
   res.send("reg success");
 
   res.send("something wrong");

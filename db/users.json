@@ -1,10 +1,12 @@
 [
-  { "id": "3-znfgPVn4epPpdmrPEpu", "role": "admin", "username": "admin", "login": "admin", "password": "admin" },
-  { "id": "xQLlKKHXvF4a2DxGKNSG1", "role": "user", "username": "admin", "login": "admin1", "password": "admin" },
+  { "id": "3-znfgPVn4epPpdmrPEpu", "role": "admin", "username": "admin", "login": "admin", "password": "zxc!%)0" },
+  {
+    "id": "xQLlKKHXvF4a2DxGKNSG1",
+    "role": "user",
+    "username": "HappyTails",
+    "login": "pawsomeproject",
+    "password": "admin"
+  },
   { "id": "AbfoizK-jzmaSaBeHL1zd", "role": "user", "username": "admin", "login": "admin2", "password": "admin" },
-  { "id": "kUhJLqkTs9hIeeSrp9bb6", "role": "user", "username": "admin", "login": "admin3", "password": "admin" },
-  { "id": "ZiuwLMGJhDXheqtUkuI1t", "role": "user", "username": "admin", "login": "undefined", "password": "admin" },
-  { "id": "HQdkbk_E7mL3sS43S4-3W", "role": "user", "username": "admin", "login": "ffzxc", "password": "azxc" },
-  { "id": "Po7r349usrgDLPJeEH2Cu", "role": "user", "username": "admin", "login": "ffzxc", "password": "azxc" },
-  { "id": "5bga25IJ6VkWq0JCsNLc4", "role": "user", "username": "admin", "login": "ffzxc", "password": "azxc" }
+  { "id": "kUhJLqkTs9hIeeSrp9bb6", "role": "user", "username": "admin", "login": "admin3", "password": "admin" }
 ]

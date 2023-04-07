@@ -10,6 +10,10 @@ const Tools: FC<IToolsProps> = ({}) => {
       title: "socket",
       path: "/tools/socket",
     },
+    {
+      title: "buttons",
+      path: "/tools/buttons",
+    },
   ];
   return (
     <ClearTinyLayout links={[{ title: "tools", path: "/tools" }]}>
