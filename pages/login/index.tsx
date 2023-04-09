@@ -16,7 +16,8 @@ export default function LoginPage() {
   useEffect(() => passwordRef?.current?.focus(), [showPassword]);
 
   useEffect(() => {
-    console.log((loginRef.current.value = "admin"), passwordRef.current.value = 'zxc!%)0');
+    loginRef.current && (loginRef.current.value = "admin");
+    passwordRef.current && (passwordRef.current.value = "zxc!%)0");
   }, []);
 
   const inputPasswordType = useMemo(() => (showPassword ? "text" : "password"), [showPassword]);
