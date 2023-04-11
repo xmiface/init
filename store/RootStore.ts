@@ -5,7 +5,7 @@ class Store {
   constructor() {
     makeAutoObservable(this);
   }
-
+  dev: boolean = true;
   auth = new AuthStore(this);
 }
 

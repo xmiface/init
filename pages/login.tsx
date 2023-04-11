@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { RootStore } from "../../store/RootStore";
+import { RootStore } from "../store/RootStore";
 
 export default function LoginPage() {
   const loginRef = useRef<HTMLInputElement>(null);
@@ -15,18 +15,13 @@ export default function LoginPage() {
 
   useEffect(() => passwordRef?.current?.focus(), [showPassword]);
 
-  useEffect(() => {
-    loginRef.current && (loginRef.current.value = "admin");
-    passwordRef.current && (passwordRef.current.value = "zxc!%)0");
-  }, []);
-
   const inputPasswordType = useMemo(() => (showPassword ? "text" : "password"), [showPassword]);
   const inputPasswordIcon = useMemo(() => (showPassword ? "😯" : "😪"), [showPassword]);
   const inputPasswordPlaceholder = useMemo(() => (showPassword ? "" : "password"), [showPassword]);
   const textStyle = "text-slate-500 hover:text-slate-100";
   const outlineStyle = "outline-none hover:outline-none hover:outline-4 active:outline-none";
   const borderStyle = "border-2 border-slate-500 hover:border-slate-300 active:border-slate-100";
-  const customStyle = `duration-200 bg-slate-200 rounded-md`;
+  const customStyle = `duration-200 bg-slate-900 rounded-md`;
   const SAbsoluteCenter = "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2";
 
   return (
