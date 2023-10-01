@@ -21,7 +21,7 @@ export default function LoginPage() {
   const textStyle = "text-slate-500 hover:text-slate-100";
   const outlineStyle = "outline-none hover:outline-none hover:outline-4 active:outline-none";
   const borderStyle = "border-2 border-slate-500 hover:border-slate-300 active:border-slate-100";
-  const customStyle = `duration-200 bg-slate-900 rounded-md`;
+  const customStyle = `duration-200 bg-twitchpink hover:bg-twitchdarkpink rounded-md text-twitchgrey`;
   const SAbsoluteCenter = "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2";
 
   return (

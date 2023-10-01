@@ -1,9 +1,11 @@
 import { observer } from "mobx-react-lite";
 
+export const sButton = `py-2 px-4 border-2 border-zinc-800 bg-twitchpink hover:bg-twitchdarkpink rounded-md`;
+
 const Index = () => {
   return (
-    <div className="relative flex items-center justify-center h-[100vh] w-500">
-      <p className="text-xl">im microservice</p>
+    <div>
+      Пока без контента
     </div>
   );
 };

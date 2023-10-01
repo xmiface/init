@@ -5,39 +5,28 @@ import { Loader } from "../components/Loader";
 import { RootStore } from "../store/RootStore";
 import "../styles/globals.css";
 import LoginPage from "./login";
+import Header from "../components/Header";
 
 export const AuthProvider: React.FC<{ children: any }> = observer(({ children }) => {
-  const localAuth = () => {
-    RootStore.auth.tryAuthByToken();
-  };
-
-  const iFrameAuth = () => {
-    if (window.addEventListener) {
-      window.addEventListener("message", listener);
-    } else {
-      // IE8
-      window.attachEvent("onmessage", listener);
-    }
-  };
-
-  function listener(event: MessageEvent) {
-    if (event.origin != "http://localhost:3000") {
-      // ignore unknown domain
-      return;
-    }
-    RootStore.auth.setIframeAuth(event.data);
-  }
-
   useEffect(() => {
-    RootStore.dev ? localAuth() : iFrameAuth();
-    // RootStore.auth.logout()
+    RootStore.auth.tryAuthByToken();
   }, []);
 
   return (
-    <div className="w-100 min-h-screen bg-slate-900 font-medium text-slate-200">
-      {RootStore.auth.loading && <Loader />}
-      {!RootStore.auth.loading && RootStore.auth.isAuth && <>{children}</>}
-      {!RootStore.auth.loading && !RootStore.auth.isAuth && <LoginPage />}
+    <div className="w-full bg-zinc-900 h-screen  border-blue-500  overflow-hidden">
+      <div className="max-w-[1920px] mx-auto font-medium text-slate-200 h-full  border-pink-500">
+
+        {RootStore.auth.loading && <Loader />}
+
+        {!RootStore.auth.loading && RootStore.auth.isAuth &&
+          <div className="relative flex flex-col h-full">
+            <Header />
+            <div className="border-red-500  h-full">{children}</div>
+          </div>
+        }
+
+        {!RootStore.auth.loading && !RootStore.auth.isAuth && <LoginPage />}
+      </div>
     </div>
   );
 });

@@ -1,12 +1,13 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import { parsedFile, saveFile } from "../tools/file";
-import { IDbUserDto } from "../../types/dto";
 import { faker } from "@faker-js/faker";
+import type { NextApiRequest, NextApiResponse } from "next";
+import { IDbUserDto } from "../../types/dto";
+import { getRoutes } from "../../utils/getRoutes";
+import { parsedFile, saveFile } from "../tools/file";
 const users = parsedFile("./db/users.json");
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const userWithLogin = users.find((user: IDbUserDto) => user.login === req.body.login);
-  console.log(req);
+
   if (!userWithLogin) {
     res.send("user not found");
     return;
@@ -26,9 +27,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const stringToSave = JSON.stringify(tokens);
   saveFile("./db/tokens.json", stringToSave);
 
+  res.setHeader("Set-Cookie", `sessionToken=${sessionToken}; refreshToken=${refreshToken}`);
+
   res.send({
     status: 200,
     refreshToken,
     sessionToken,
+    links: getRoutes(userWithLogin.role)
   });
 }
