@@ -3,17 +3,17 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { IDbUserDto } from "../../types/dto";
 import { getRoutes } from "../../utils/getRoutes";
 import { parsedFile, saveFile } from "../tools/file";
-const users = parsedFile("./db/users.json");
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const userWithLogin = users.find((user: IDbUserDto) => user.login === req.body.login);
+  const users = parsedFile("./db/users.json") as IDbUserDto[];
+  const userWithLogin = users.find((user) => user.login === req.body.login);
 
   if (!userWithLogin) {
     res.send("user not found");
     return;
   }
 
-  const correctPass = userWithLogin?.password === req.body.password;
+  const correctPass = userWithLogin.password === req.body.password;
   if (!correctPass) {
     res.send("wrong password");
     return;
@@ -23,7 +23,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const sessionToken = faker.datatype.uuid();
 
   const tokens = parsedFile("./db/tokens.json");
-  tokens.push({ id: userWithLogin.id, refreshToken: refreshToken, sessionToken: sessionToken });
+  tokens.push({ id: userWithLogin.id, refreshToken, sessionToken });
   const stringToSave = JSON.stringify(tokens);
   saveFile("./db/tokens.json", stringToSave);
 

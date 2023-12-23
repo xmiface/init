@@ -2,6 +2,12 @@ import clsx from "clsx";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { RootStore } from "../store/RootStore";
 
+const textStyle = "text-slate-500 hover:text-slate-100";
+const outlineStyle = "outline-none hover:outline-none hover:outline-4 active:outline-none";
+const borderStyle = "border-2 border-slate-500 hover:border-slate-300 active:border-slate-100";
+const customStyle = `duration-200 bg-twitchpink hover:bg-twitchdarkpink rounded-md text-twitchgrey`;
+const SAbsoluteCenter = "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2";
+
 export default function LoginPage() {
   const loginRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
@@ -18,11 +24,6 @@ export default function LoginPage() {
   const inputPasswordType = useMemo(() => (showPassword ? "text" : "password"), [showPassword]);
   const inputPasswordIcon = useMemo(() => (showPassword ? "😯" : "😪"), [showPassword]);
   const inputPasswordPlaceholder = useMemo(() => (showPassword ? "" : "password"), [showPassword]);
-  const textStyle = "text-slate-500 hover:text-slate-100";
-  const outlineStyle = "outline-none hover:outline-none hover:outline-4 active:outline-none";
-  const borderStyle = "border-2 border-slate-500 hover:border-slate-300 active:border-slate-100";
-  const customStyle = `duration-200 bg-twitchpink hover:bg-twitchdarkpink rounded-md text-twitchgrey`;
-  const SAbsoluteCenter = "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2";
 
   return (
     <div className="flex justify-center items-center border-pink-100">

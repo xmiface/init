@@ -56,7 +56,8 @@ const Index = observer(() => {
 
     return <div className="flex flex-col">
         {RootStore.dnd.items.map((el, idx) => <div className="relative" key={el.id}>
-            <div draggable
+            <div
+                draggable
                 className={clsx("p-2", `${draggbleId === el.id && 'bg-red-900'}`)}
                 onDragStart={(e) => handleOnDragStart(el)}
                 onDragEnd={handleDragEnd}

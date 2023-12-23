@@ -1,6 +1,6 @@
 export interface IDbUserDto {
   id: string;
-  role: string;
+  role: "admin" | "moder" | "driver";
   username: string;
   login: string;
   password: string;

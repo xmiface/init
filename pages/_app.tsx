@@ -6,11 +6,18 @@ import { RootStore } from "../store/RootStore";
 import "../styles/globals.css";
 import LoginPage from "./login";
 import Header from "../components/Header";
+import { useRouter } from "next/router";
+
+const routesWithoutLayout = ['/clear'];
+const layoutRequire = (pathname: string) => !routesWithoutLayout.find(el => el === pathname);
 
 export const AuthProvider: React.FC<{ children: any }> = observer(({ children }) => {
   useEffect(() => {
     RootStore.auth.tryAuthByToken();
   }, []);
+
+  const router = useRouter();
+  console.log(router.pathname);
 
   return (
     <div className="w-full bg-zinc-900 h-screen  border-blue-500  overflow-hidden">
@@ -20,7 +27,7 @@ export const AuthProvider: React.FC<{ children: any }> = observer(({ children })
 
         {!RootStore.auth.loading && RootStore.auth.isAuth &&
           <div className="relative flex flex-col h-full">
-            <Header />
+            {layoutRequire(router.pathname) && <Header />}
             <div className="border-red-500 h-full">{children}</div>
           </div>
         }
